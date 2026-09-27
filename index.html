@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BSM Tuition Centre | Learn. Prepare. Grow.</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f9fc;
+    color:#172033;
+    line-height:1.6;
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #e7ebf2;
+}
+
+.nav-container{
+    max-width:1150px;
+    margin:auto;
+    padding:15px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:800;
+    color:#173b8f;
+}
+
+.logo span{
+    color:#2563eb;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#2563eb;
+}
+
+.menu{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:680px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 85% 20%,#bfdbfe 0,transparent 27%),
+        radial-gradient(circle at 15% 80%,#dbeafe 0,transparent 30%),
+        linear-gradient(135deg,#eef5ff,#ffffff);
+}
+
+.hero-container{
+    max-width:1150px;
+    width:100%;
+    margin:auto;
+    padding:90px 22px;
+}
+
+.badge{
+    display:inline-block;
+    background:#dbeafe;
+    color:#1d4ed8;
+    padding:8px 15px;
+    border-radius:50px;
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    max-width:750px;
+    font-size:64px;
+    line-height:1.03;
+    letter-spacing:-2px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#2563eb;
+}
+
+.hero p{
+    max-width:650px;
+    font-size:19px;
+    color:#5b6575;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 23px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.25s;
+    cursor:pointer;
+    border:none;
+    font-size:15px;
+}
+
+.primary{
+    background:#2563eb;
+    color:white;
+    box-shadow:0 8px 20px rgba(37,99,235,.22);
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+.secondary{
+    background:white;
+    color:#1d4ed8;
+    border:1px solid #bfdbfe;
+}
+
+
+/* GENERAL */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:90px 22px;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:650px;
+    margin:0 auto 50px;
+}
+
+.section-heading h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.section-heading p{
+    color:#687386;
+}
+
+
+/* STATS */
+
+.stats{
+    max-width:1050px;
+    margin:-45px auto 0;
+    position:relative;
+    z-index:5;
+    padding:0 20px;
+}
+
+.stats-grid{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 18px 50px rgba(15,35,77,.09);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    overflow:hidden;
+}
+
+.stat{
+    padding:28px;
+    text-align:center;
+    border-right:1px solid #edf0f5;
+}
+
+.stat:last-child{
+    border:none;
+}
+
+.stat h3{
+    font-size:28px;
+    color:#2563eb;
+}
+
+.stat p{
+    color:#687386;
+    font-size:14px;
+}
+
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.about-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    border:1px solid #e9edf4;
+    box-shadow:0 10px 35px rgba(0,0,0,.04);
+}
+
+.about-card h3{
+    font-size:25px;
+    margin-bottom:14px;
+}
+
+.about-card p{
+    color:#657084;
+}
+
+
+/* COURSES */
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.course{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    border:1px solid #e7ebf2;
+    transition:.25s;
+}
+
+.course:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 40px rgba(15,35,77,.09);
+}
+
+.course-icon{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:#e8f1ff;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.course h3{
+    margin-bottom:9px;
+}
+
+.course p{
+    color:#687386;
+}
+
+
+/* FEES */
+
+.fees-wrapper{
+    overflow-x:auto;
+}
+
+.fees-table{
+    width:100%;
+    min-width:650px;
+    border-collapse:collapse;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(0,0,0,.05);
+}
+
+.fees-table th{
+    background:#173b8f;
+    color:white;
+    padding:17px;
+    text-align:left;
+}
+
+.fees-table td{
+    padding:17px;
+    border-bottom:1px solid #edf0f5;
+}
+
+.fees-table tr:last-child td{
+    border-bottom:none;
+}
+
+.fees-table td:last-child{
+    font-weight:bold;
+    color:#2563eb;
+}
+
+
+/* TIMINGS */
+
+.timing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.timing-card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    border:1px solid #e7ebf2;
+}
+
+.timing-card h3{
+    color:#173b8f;
+    margin-bottom:8px;
+}
+
+.timing-card p{
+    color:#687386;
+}
+
+
+/* DARK SECTION */
+
+.dark-section{
+    max-width:none;
+    background:#0d2147;
+    color:white;
+}
+
+.dark-inner{
+    max-width:1150px;
+    margin:auto;
+    padding:90px 22px;
+}
+
+.dark-inner .section-heading p{
+    color:#bdc9dd;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.feature{
+    padding:30px;
+    border-radius:18px;
+    background:rgba(255,255,255,.07);
+}
+
+.feature-icon{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.feature h3{
+    margin-bottom:8px;
+}
+
+.feature p{
+    color:#c4d0e2;
+}
+
+
+/* FAQ */
+
+.faq{
+    max-width:750px;
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+    margin-bottom:12px;
+    border-radius:12px;
+    border:1px solid #e5e9f0;
+    overflow:hidden;
+}
+
+.faq-question{
+    padding:20px;
+    cursor:pointer;
+    font-weight:700;
+    display:flex;
+    justify-content:space-between;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 20px 20px;
+    color:#687386;
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+
+/* CONTACT */
+
+.contact-box{
+    background:linear-gradient(135deg,#eaf2ff,#ffffff);
+    padding:55px 30px;
+    border-radius:25px;
+    text-align:center;
+    border:1px solid #dbe7fb;
+}
+
+.contact-box h2{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.address{
+    color:#687386;
+    margin-bottom:25px;
+}
+
+#message{
+    margin-top:17px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#071630;
+    color:#b9c5d8;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer strong{
+    color:white;
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .hero h1{
+        font-size:49px;
+    }
+
+    .course-grid,
+    .feature-grid,
+    .timing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .nav-container{
+        flex-wrap:wrap;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        padding-top:15px;
+        gap:13px;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:41px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-right:none;
+        border-bottom:1px solid #edf0f5;
+    }
+
+    section,
+    .dark-inner{
+        padding:65px 20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">
+BSM <span>Tuition Centre</span>
+</div>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#about">About</a></li>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#fees">Fees</a></li>
+<li><a href="#timings">Timings</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-container">
+
+<div class="badge">
+📚 Tuition & Academic Support
+</div>
+
+<h1>
+Learn Better.
+<span>Grow Further.</span>
+</h1>
+
+<p>
+A modern website concept for BSM Tuition Centre,
+Rajendra Park, Nangloi Extension.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#fees" class="btn primary">
+View Fees
+</a>
+
+<a href="#contact" class="btn secondary">
+Make an Enquiry
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h3>4.9★</h3>
+<p>Public listing rating</p>
+</div>
+
+<div class="stat">
+<h3>229+</h3>
+<p>Publicly listed reviews</p>
+</div>
+
+<div class="stat">
+<h3>7 Days</h3>
+<p>Publicly listed schedule</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-heading">
+
+<h2>About BSM</h2>
+
+<p>
+Academic learning, guidance and preparation.
+</p>
+
+</div>
+
+<div class="about-grid">
+
+<div class="about-card">
+
+<h3>📚 Academic Support</h3>
+
+<p>
+BSM Tuition Centre is publicly listed as a
+coaching and tutoring centre in Rajendra Park,
+Nangloi Extension.
+</p>
+
+</div>
+
+<div class="about-card">
+
+<h3>🎯 Learning With Guidance</h3>
+
+<p>
+The public listing describes academic tutoring,
+doubt-clearing support and exam preparation.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<section id="courses">
+
+<div class="section-heading">
+
+<h2>Classes & Subjects</h2>
+
+<p>
+The actual subjects and classes should be
+confirmed directly with BSM.
+</p>
+
+</div>
+
+<div class="course-grid">
+
+<div class="course">
+
+<div class="course-icon">📘</div>
+
+<h3>Class 5</h3>
+
+<p>
+Subjects: <strong>To be confirmed</strong>
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">📗</div>
+
+<h3>Class 6</h3>
+
+<p>
+Subjects: <strong>To be confirmed</strong>
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">📙</div>
+
+<h3>Class 7</h3>
+
+<p>
+Subjects: <strong>To be confirmed</strong>
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">📕</div>
+
+<h3>Class 8</h3>
+
+<p>
+Subjects: <strong>To be confirmed</strong>
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">📒</div>
+
+<h3>Class 9</h3>
+
+<p>
+Subjects: <strong>To be confirmed</strong>
+</p>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">📚</div>
+
+<h3>Class 10</h3>
+
+<p>
+Subjects: <strong>To be confirmed</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEES -->
+
+<section id="fees">
+
+<div class="section-heading">
+
+<h2>Fee Structure</h2>
+
+<p>
+Replace these placeholders with BSM's official
+fees before publishing the final website.
+</p>
+
+</div>
+
+
+<div class="fees-wrapper">
+
+<table class="fees-table">
+
+<thead>
+
+<tr>
+<th>Class</th>
+<th>Subjects</th>
+<th>Timing</th>
+<th>Monthly Fee</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+<td>Class 5</td>
+<td>To be confirmed</td>
+<td>To be confirmed</td>
+<td>₹____</td>
+</tr>
+
+<tr>
+<td>Class 6</td>
+<td>To be confirmed</td>
+<td>To be confirmed</td>
+<td>₹____</td>
+</tr>
+
+<tr>
+<td>Class 7</td>
+<td>To be confirmed</td>
+<td>To be confirmed</td>
+<td>₹____</td>
+</tr>
+
+<tr>
+<td>Class 8</td>
+<td>To be confirmed</td>
+<td>To be confirmed</td>
+<td>₹____</td>
+</tr>
+
+<tr>
+<td>Class 9</td>
+<td>To be confirmed</td>
+<td>To be confirmed</td>
+<td>₹____</td>
+</tr>
+
+<tr>
+<td>Class 10</td>
+<td>To be confirmed</td>
+<td>To be confirmed</td>
+<td>₹____</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- TIMINGS -->
+
+<section id="timings">
+
+<div class="section-heading">
+
+<h2>Class Timings</h2>
+
+<p>
+Actual batch timings should be provided by BSM.
+</p>
+
+</div>
+
+
+<div class="timing-grid">
+
+<div class="timing-card">
+
+<h3>Morning Batches</h3>
+
+<p>
+Timing: To be confirmed
+</p>
+
+</div>
+
+
+<div class="timing-card">
+
+<h3>Afternoon Batches</h3>
+
+<p>
+Timing: To be confirmed
+</p>
+
+</div>
+
+
+<div class="timing-card">
+
+<h3>Evening Batches</h3>
+
+<p>
+Timing: To be confirmed
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY -->
+
+<div class="dark-section">
+
+<div class="dark-inner">
+
+<div class="section-heading">
+
+<h2>Why This Website?</h2>
+
+<p>
+Important information should be easy for
+students and parents to find.
+</p>
+
+</div>
+
+
+<div class="feature-grid">
+
+<div class="feature">
+
+<div class="feature-icon">📍</div>
+
+<h3>Location</h3>
+
+<p>
+Find the tuition centre before visiting.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">💰</div>
+
+<h3>Fees</h3>
+
+<p>
+Parents can compare class fees and
+subjects in one place.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">📞</div>
+
+<h3>Enquiry</h3>
+
+<p>
+Make it easy to ask about admissions
+and available batches.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FAQ -->
+
+<section>
+
+<div class="section-heading">
+
+<h2>Frequently Asked Questions</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<div class="faq-question" onclick="toggleFAQ(this)">
+Which classes are available?
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+The available classes should be confirmed
+directly with BSM Tuition Centre.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question" onclick="toggleFAQ(this)">
+What are the fees?
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+Fees vary according to the class and subjects.
+The official fee structure should be provided
+by BSM before publication.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question" onclick="toggleFAQ(this)">
+What are the batch timings?
+<span>+</span>
+</div>
+
+<div class="faq-answer">
+Current batch timings should be confirmed
+directly with the tuition centre.
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact-box">
+
+<h2>
+Interested in Joining?
+</h2>
+
+<p class="address">
+
+F-69, Rajendra Park, Nangloi Extension,<br>
+Nangloi, New Delhi, Delhi 110041
+
+</p>
+
+<button class="btn primary" onclick="showMessage()">
+Make an Enquiry
+</button>
+
+<p id="message"></p>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>BSM Tuition Centre</strong>
+· Rajendra Park, Nangloi
+</p>
+
+<p>
+© 2026 · Website Concept
+</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("show");
+
+}
+
+
+function toggleFAQ(element){
+
+    element
+    .parentElement
+    .classList
+    .toggle("active");
+
+}
+
+
+function showMessage(){
+
+    document
+    .getElementById("message")
+    .textContent =
+    "Please contact BSM Tuition Centre directly for current course information.";
+
+}
+
+</script>
+
+</body>
+  </html>
